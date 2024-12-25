@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
 @export var speed : float = 200
-@export var gravity: float = 800
+@export var gravity: float = 980
 
 
 func _physics_process(delta: float) -> void:
@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
+	var direction: float = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * speed
 	else:
