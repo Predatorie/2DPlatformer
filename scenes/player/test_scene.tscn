@@ -1,19 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://y66ni7xg5ryc"]
 
 [ext_resource type="PackedScene" uid="uid://csgvuskxnnxmj" path="res://scenes/player/player.tscn" id="1_1fpkd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnyqd"]
-size = Vector2(238, 10)
+[ext_resource type="PackedScene" uid="uid://cplceso60tsc2" path="res://tile_maps/ground_tile_map.tscn" id="2_u8d7l"]
 
 [node name="TestScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_1fpkd")]
 position = Vector2(457, 272)
 
-[node name="TestPlatform" type="StaticBody2D" parent="."]
-position = Vector2(523, 284)
-collision_layer = 256
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlatform"]
-position = Vector2(-2, 1)
-shape = SubResource("RectangleShape2D_pnyqd")
+[node name="GroundTileMap" parent="." instance=ExtResource("2_u8d7l")]
