@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://3x15pcjy12mg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u4wlc"]
+normal = Vector2(1, 0)
+
+[node name="WorldBoundry" type="StaticBody2D"]
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_u4wlc")
+debug_color = Color(0.510225, 0, 0.0905231, 1)

@@ -120,8 +120,3 @@ shape = SubResource("RectangleShape2D_tmopo")
 libraries = {
 "": SubResource("AnimationLibrary_7md3g")
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -35)
-process_callback = 0
-position_smoothing_enabled = true

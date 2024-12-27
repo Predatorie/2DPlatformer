@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=4 uid="uid://y66ni7xg5ryc"]
+[gd_scene load_steps=9 format=4 uid="uid://y66ni7xg5ryc"]
 
 [ext_resource type="PackedScene" uid="uid://csgvuskxnnxmj" path="res://scenes/player/player.tscn" id="1_1fpkd"]
 [ext_resource type="Texture2D" uid="uid://cr4eictltpr5t" path="res://assets/backgrounds/v1/skyline-a.png" id="1_kpabb"]
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_q4uga"]
+[ext_resource type="PackedScene" uid="uid://3x15pcjy12mg" path="res://scenes/levels/world_boundry.tscn" id="2_07jtv"]
 [ext_resource type="Texture2D" uid="uid://bswecoe0yn3cs" path="res://assets/backgrounds/v1/buildings-bg.png" id="2_jtbhw"]
 [ext_resource type="PackedScene" uid="uid://cplceso60tsc2" path="res://tile_maps/ground_tile_map.tscn" id="2_u8d7l"]
 [ext_resource type="Texture2D" uid="uid://c4r2ule8u78ft" path="res://assets/backgrounds/v1/near-buildings-bg.png" id="3_of22h"]
+[ext_resource type="Script" path="res://scenes/player/player_camera.gd" id="7_6twf7"]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_q4uga")
@@ -45,3 +47,11 @@ tile_map_data = PackedByteArray("AAAJABQAAAAAAAEAAAAJABUAAAAAAAIAAAAJABYAAAAAAAM
 
 [node name="Player" parent="." instance=ExtResource("1_1fpkd")]
 position = Vector2(17, 328)
+
+[node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("tilemap")]
+position = Vector2(0, -28)
+script = ExtResource("7_6twf7")
+tilemap = NodePath("../../GroundTileMap")
+
+[node name="WorldBoundry" parent="." instance=ExtResource("2_07jtv")]
+position = Vector2(3, 100)
