@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://csgvuskxnnxmj"]
+[gd_scene load_steps=12 format=3 uid="uid://csgvuskxnnxmj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_biwun"]
 [ext_resource type="Texture2D" uid="uid://cnvses41pygg5" path="res://assets/characters/main/male-spritesheet.png" id="1_ut6gp"]
+[ext_resource type="Script" path="res://scenes/states/state_machine.gd" id="3_cxvtj"]
+[ext_resource type="Script" path="res://scenes/states/idle_state.gd" id="4_s4in8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmopo"]
 size = Vector2(15, 13)
@@ -120,3 +122,9 @@ shape = SubResource("RectangleShape2D_tmopo")
 libraries = {
 "": SubResource("AnimationLibrary_7md3g")
 }
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_cxvtj")
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("4_s4in8")
